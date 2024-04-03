@@ -1,7 +1,7 @@
 import React from 'react';
-import {Animated, Text, View} from "react-native";
+import { Text, View} from "react-native";
 import CardVorlage from "./CardVorlage";
-import ScrollView = Animated.ScrollView;
+
 
 const Cards = () => {
     const products = [
