@@ -11,6 +11,8 @@ const Cards = () => {
         { title: "Sessel", subtitle: "ganz in weiss", }
     ];
 
+
+
     return (
         <View>
             <Text>Willkommen im Cards Shop!</Text>

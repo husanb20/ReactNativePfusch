@@ -20,7 +20,7 @@ const Home = ({navigation}: any) => {
     }
 
     return (
-       <View>
+       <View style={styles.container}>
            <Text>Hallo, willkommen zu meiner Seite!</Text>
             <Text>Username</Text>
            <TextInput style={styles.inputs} onChangeText={text => {setUsername(text)}}></TextInput>
@@ -35,7 +35,13 @@ const Home = ({navigation}: any) => {
 const styles = StyleSheet.create({
     inputs: {
         color: "darkblue"
-    }
+    },
+    container: {
+            flex: 1,
+            backgroundColor: '#fff',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }
 })
 
 export default Home;

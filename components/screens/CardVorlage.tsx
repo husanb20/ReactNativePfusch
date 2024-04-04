@@ -8,9 +8,14 @@ interface ICard {
 
 const CardVorlage = ({title, subtitle}: ICard) => {
     const [stars, setStars] = useState(0);
-
-    const handleStarClick = (starCount: number) => {
-        setStars(starCount);
+    //starCount: number
+    const handleStarClick = () => {
+        //setStars(starCount);
+        if(stars === 5)
+            setStars(1);
+        else {
+            setStars(stars + 1);
+        }
     };
 
 
@@ -20,15 +25,15 @@ const CardVorlage = ({title, subtitle}: ICard) => {
                 <View style={styles.detailsContainer}>
                     <Text style={styles.title}>{title}</Text>
                     <Text style={styles.subtitle}>{subtitle}</Text>
-                    <TouchableOpacity onPress={() => handleStarClick(1)}>
-                        <Text>{stars >= 1 ? '★' : '☆'}</Text>
+                    <TouchableOpacity onPress={() => handleStarClick() }>
+                        <Text>Stern</Text>
+                        <View style={{flexDirection: "row"}}>
+                            {[...Array(stars)].map((index) => (
+                                <Image style={styles.stars} source={require("../../assets/stern.png")}></Image>
+                            ))}
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleStarClick(2)}>
-                        <Text>{stars >= 2 ? '★' : '☆'}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => handleStarClick(3)}>
-                        <Text>{stars >= 3 ? '★' : '☆'}</Text>
-                    </TouchableOpacity>
+
                 </View>
         </View>
     );
@@ -36,7 +41,7 @@ const CardVorlage = ({title, subtitle}: ICard) => {
 
 const styles = StyleSheet.create({
     image: {
-        height: 200, // Höhe des Bildes anpassen
+        height: 100, // Höhe des Bildes anpassen
         width: '100%', // Breite auf 100% des Containers setzen
     },
     card: {
@@ -55,6 +60,13 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 14, // Größe des Untertitels anpassen
     },
+    stars: {
+        height: 50, // Höhe des Bildes anpassen
+        width: 50
+    },
+    button: {
+        color: "darkblue"
+    }
 })
 
 export default CardVorlage;
