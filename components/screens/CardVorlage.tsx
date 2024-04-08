@@ -12,7 +12,7 @@ const CardVorlage = ({title, subtitle}: ICard) => {
     const handleStarClick = () => {
         //setStars(starCount);
         if(stars === 5)
-            setStars(1);
+            setStars(0);
         else {
             setStars(stars + 1);
         }
@@ -26,7 +26,7 @@ const CardVorlage = ({title, subtitle}: ICard) => {
                     <Text style={styles.title}>{title}</Text>
                     <Text style={styles.subtitle}>{subtitle}</Text>
                     <TouchableOpacity onPress={() => handleStarClick() }>
-                        <Text>Stern</Text>
+                        <Text>★</Text>
                         <View style={{flexDirection: "row"}}>
                             {[...Array(stars)].map((index) => (
                                 <Image style={styles.stars} source={require("../../assets/stern.png")}></Image>

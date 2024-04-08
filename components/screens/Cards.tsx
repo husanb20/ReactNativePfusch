@@ -8,9 +8,8 @@ const Cards = () => {
         { title: "Jacket", subtitle: "gut gefüttert" },
         { title: "Couch", subtitle: "gut eingelegen" },
         { title: "Nachhilfe", subtitle: "React native" },
-        { title: "Sessel", subtitle: "ganz in weiss", }
+        { title: "Sessel", subtitle: "ganz in weiss" }
     ];
-
 
 
     return (
